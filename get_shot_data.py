@@ -61,5 +61,12 @@ if __name__ == '__main__':
             print(e)
 
 
-    with open('data/all_shot_data.json', 'w') as outfile:
-            json.dump(all_shot_data, outfile)
+    number_of_players = len(all_shot_data['data'])
+    chunk_size = 150
+
+    for i in xrange(0, number_of_players, chunk_size):
+        with open('data/shot_data_file_' + str(i//chunk_size + 1) + '.json', 'w') as outfile:
+            chunk_of_data = {
+                'data': all_shot_data['data'][i:i + chunk_size]
+                }
+            json.dump(chunk_of_data, outfile)
