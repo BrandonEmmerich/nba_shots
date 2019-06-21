@@ -2,3 +2,6 @@
 scratch.py
 private.py
 *checkpoint.ipynb
+.ipynb_checkpoints
+research_log.ipynb
+scratch.ipynb
